@@ -1,60 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULATOR</title>
 </head>
+<style>
+    h1{
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;   
+    }
+    h2{
+        font-size: 20px;
+
+    }
+    input{
+        padding: 2%;
+        border-radius: 100%;
+        width: 250px;
+        border-color: black;
+        border-width: 20px;
+    }
+    button{
+        padding: 1%;
+        width: 15%;
+        font-size: 20px;
+        border-radius: 30%;
+        border-color: aliceblue;
+        border: 50px;
+    }
+    body{
+        background-image: url(./cal.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #result{
+        font-size: 40px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: aliceblue;
+    
+    
+    }
+    h2{
+        font-size: 30px;
+        font-family: cursive;
+        
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+        border: 5px;
+        border-color: aqua;
+    }
+
+    
+</style>
+
 <body>
-    <h1>conditional checking using if</h1>
+    <CENTER>
+    <h1><u>CONDITIONAL CHECKING USING IF CALCULATOR</u></h1>
     <form onsubmit="doSum();return false">
-    num1: <input id="num1" type="number"required placeholder="Enter first number">
-    <br>
-    operation: <input id="operation"  type="text" required placeholder="+ - * /" required>
-    <br>
-    num2: <input id="num2"  type="number" required placeholder="Enter second number">
-    <br>
-    <button type="submit">Submit</button>
-     </form>
-     <h3 id="result"></h3>
+        <h2>Your First Number:</h2> <br><input id="num1" type="number" required placeholder="Enter first number">
+        <br>
+        <h2> Which Operations: </h2><br><input id="operation" type="text" required placeholder="+ - * /" required>
+        <br>
+        <h2>Your Second Number</h2> <br> <input id="num2" type="number" required placeholder="Enter second number">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2 >RESULT</h2>
+    <h3 id="result"></h3>
+</CENTER>
 
-
-     <script>
-        function doSum()
-        {
+    <script>
+        function doSum() {
             let firstnumber = +document.querySelector("#num1").value
             let secondnumber = +document.querySelector("#num2").value
             let operation = document.querySelector("#operation").value
 
             let resultElement = document.querySelector("#result")
 
-            if (operation ==="+")
-            {
-             resultElement.innerHTML = firstnumber+secondnumber
+            if (operation === "+") {
+                resultElement.innerHTML = firstnumber + secondnumber
             }
-            else if (operation ==="-")
-            {
-             resultElement.innerHTML = firstnumber-secondnumber
+            else if (operation === "-") {
+                resultElement.innerHTML = firstnumber - secondnumber
             }
-            else  if (operation ==="*")
-            {
-             resultElement.innerHTML = firstnumber*secondnumber
+            else if (operation === "*") {
+                resultElement.innerHTML = firstnumber * secondnumber
             }
-            else  if (operation ==="/")
-            {
-                if(secondnumber === 0){
+            else if (operation === "/") {
+                if (secondnumber === 0) {
                     resultElement.innerHTML = "cannot divide by 0"
                 }
                 else
-                    resultElement.innerHTML = firstnumber/secondnumber;
+                    resultElement.innerHTML = firstnumber / secondnumber;
             }
-            else
-            {
-               resultElement.innerHTML = "invalid operations"
+            else {
+                resultElement.innerHTML = "invalid operations"
 
             }
         }
-</script>
+    </script>
 </body>
+
 </html>
